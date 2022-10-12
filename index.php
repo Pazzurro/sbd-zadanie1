@@ -10,8 +10,8 @@
             
             $db = new mysqli("51.123.43.245", "admin", "123456", "quiz");
             
-            $sqlOne = "SELECT students.name, students.last_name, test.date FROM students_has_test JOIN students ON students.id = students_has_test.students_id";
-        
+            $sqlOne = "SELECT students.name, students.last_name, test.date FROM students_has_test JOIN students ON students.id = students_has_test.students_id JOIN test ON test.id = students_has_test.test_id";
+
         
             //WYPISANIE PIERWSZEGO ZAPYTANIA
             if($res = $db->query($sqlOne))
@@ -25,7 +25,7 @@
             }
         
             
-            $db->close();
+            $db-close();
         ?>
         
     </body>
